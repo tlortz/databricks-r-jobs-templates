@@ -1,5 +1,5 @@
 # Databricks notebook source
-
+# COMMAND ----------
 library(SparkR)
 library(magrittr)
 
