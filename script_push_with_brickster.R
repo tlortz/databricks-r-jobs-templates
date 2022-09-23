@@ -26,7 +26,8 @@ cluster_details <- db_cluster_get(cluster_id)
 
 # more advanced test - pushing an R script from RStudio to the Databricks workspace as a notebook source file
 # note that this script has the file extension changed from ".R" to ".r"
-workspace_path <- "/Users/tim.lortz@databricks.com/SparkR_test"
+user_id <- cluster_details$creator_user_name # if you as the user did not create the cluster, replace this with your Databricks user id
+workspace_path <- paste0("/Users/", user_id, "/SparkR_test")
 file <- "SparkR_test.r"
 db_workspace_import(
   path = workspace_path,
